@@ -1,0 +1,2434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <!--headre style start-->
+    <style>
+        /* Reset some default styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Header container */
+        .school-header {
+            background-image: url('https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg'); /* Replace with your school image */
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Adjust height as needed */
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Dark overlay for better text visibility */
+        .header-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* School name styling */
+        .school-name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* School motto styling */
+        .school-motto {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+        }
+        
+        /* Established year */
+        .established {
+            font-size: 1.2rem;
+            background-color: rgba(0, 80, 120, 0.8);
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+        
+        /* School logo */
+        .school-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 80px;
+            width: auto;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        
+        /* Navigation bar */
+        .school-nav {
+            background: linear-gradient(to right, #0056b3, #003366);
+            padding: 12px 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .school-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        .school-nav li {
+            margin: 0 10px;
+        }
+        
+        .school-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .school-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .school-name {
+                font-size: 2.5rem;
+            }
+            .school-motto {
+                font-size: 1.3rem;
+            }
+            .school-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .school-nav li {
+                margin: 5px;
+            }
+        }
+    </style>
+    <!--header style end-->
+    <!--slide style starts -->
+      <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+        
+        .mySlides img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+        
+        /* Slide animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        
+        /* Caption text */
+        .text {
+            color: white;
+            font-size: 20px;
+            padding: 15px 20px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        /* The dots/bullets/indicators */
+        .dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            cursor: pointer;
+        }
+        
+        .active, .dot:hover {
+            background-color: #0077cc;
+        }
+        
+        /* Responsive layout */
+        @media only screen and (max-width: 768px) {
+            .mySlides img {
+                height: 300px;
+            }
+            
+            .text {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+    </style>
+    <!--slide style end-->
+    <!--About style starts-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .about-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #0056b3;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background-color: #0056b3;
+        }
+
+        .about-text {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .school-features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #0056b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .about-content, .about-image {
+                flex: none;
+                width: 100%;
+            }
+            
+            .about-image {
+                order: -1;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+    <!--about style end-->
+    <!--Academic section starts-->
+    <style>
+        /* Consistent with previous styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .academics-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #0056b3;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .academics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .academic-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .academic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .academic-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 60px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #0056b3, #003366);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .academics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <!--Academic section style end-->
+<!--Admission section style start-->
+    <style>
+        /* Consistent with previous styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .admissions-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #0056b3;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .admissions-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .admissions-content {
+            flex: 1;
+        }
+
+        .admissions-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            align-self: flex-start;
+            position: sticky;
+            top: 20px;
+        }
+
+        .admissions-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Admission Process Styles */
+        .admission-process {
+            margin-top: 30px;
+        }
+
+        .process-step {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: #0056b3;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #0056b3;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: #555;
+        }
+
+        /* Requirements Styles */
+        .admission-requirements {
+            background-color: #f5f9ff;
+            border-left: 4px solid #0056b3;
+            padding: 25px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .requirements-title {
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .requirements-list {
+            list-style-type: none;
+        }
+
+        .requirements-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .requirements-list li::before {
+            content: '✓';
+            color: #0056b3;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Form Styles */
+        .admission-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .form-title {
+            color: #0056b3;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .form-submit {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .form-submit:hover {
+            background-color: #003366;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .admissions-container {
+                flex-direction: column;
+            }
+            
+            .admissions-image {
+                order: -1;
+                margin-bottom: 30px;
+                position: static;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+    <!--Admission style end-->
+    <!--Facilities style start-->
+    <style>
+        /* Consistent with previous styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .facilities-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #0056b3;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .facilities-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .facility-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .facility-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .facility-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .facility-card:hover .facility-image img {
+            transform: scale(1.1);
+        }
+
+        .facility-content {
+            padding: 25px;
+        }
+
+        .facility-title {
+            font-size: 1.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .facility-description {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .facility-features {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+
+        .facility-features li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            color: #444;
+        }
+
+        .facility-features li::before {
+            content: '✓';
+            color: #0056b3;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Video Tour Section */
+        .video-tour {
+            margin: 60px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .facilities-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .facility-image {
+                height: 200px;
+            }
+        }
+    </style>
+    <!--Facilities style end-->
+    <!--Gallery style start-->
+     <style>
+        /* Consistent with previous styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .gallery-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #0056b3;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: white;
+            border: 2px solid #0056b3;
+            color: #0056b3;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #0056b3;
+            color: white;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        .view-more {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .view-more-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #0056b3;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .view-more-btn:hover {
+            background: #003366;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 5px;
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.2rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+        }
+    </style>
+    <!--Gallery style end-->
+    <!--testinomial style start-->
+    <style>
+        /* Consistent with previous styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .testimonials-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            background-color: #f5f9ff;
+            border-radius: 15px;
+            padding: 50px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #0056b3;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .testimonials-container {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 20px 0;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .testimonials-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .testimonial-card {
+            min-width: 350px;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            color: #0056b3;
+            font-size: 3rem;
+            font-family: Georgia, serif;
+            line-height: 1;
+            position: absolute;
+            opacity: 0.2;
+        }
+
+        .testimonial-text::before {
+            content: '“';
+            top: -10px;
+            left: -10px;
+        }
+
+        .testimonial-text::after {
+            content: '”';
+            bottom: -40px;
+            right: -10px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid #0056b3;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: #0056b3;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .control-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .control-btn.active {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                min-width: 280px;
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <!--testinomial style end-->
+    <!--whatsapp style starts-->
+     <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-float i {
+            margin-top: 3px;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #0056b3;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 30px;
+                right: 20px;
+                font-size: 26px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for WhatsApp icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!--whatsapp style end-->
+    <!--footer style starts-->
+     <style>
+        /* Consistent with previous styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer {
+            background-color: #003366;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #0056b3;
+        }
+
+        .footer-links ul {
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .contact-info {
+            list-style-type: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            color: #0056b3;
+            font-size: 18px;
+            width: 20px;
+        }
+
+        .contact-text {
+            flex: 1;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .contact-text a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .newsletter p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+        }
+
+        .newsletter-form button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #0077cc;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-heading {
+                margin-top: 30px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!--footer sytle end-->
+</head>
+<body>
+    <!--header section starts-->
+    <header class="school-header">
+        <!-- Add your school logo image here -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSVJvdr9q2sYXdV5Qn8j47CV7i1nDNK-pIew&s" alt="School Logo" class="school-logo">
+        
+        <div class="header-overlay">
+            <h1 class="school-name">Sunshine Public School</h1>
+            <p class="school-motto">"Empowering Minds, Building Character"</p>
+            <div class="established">Established 1985</div>
+        </div>
+    </header>
+    
+    <nav class="school-nav">
+        <div class="nav-container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#About_Us">About Us</a></li>
+                <li><a href="#Academics">Academics</a></li>
+                <li><a href="#Admissions">Admissions</a></li>
+                <li><a href="#Facilities">Facilities</a></li>
+                <li><a href="#Gallery">Gallery</a></li>
+                <li><a href="#Contact_Us">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!--header section end-->
+    <!--slide section start-->
+      <h2 style="text-align: center; margin-top: 20px; color: #0056b3;">Our School </h2>
+    
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/17792670/pexels-photo-17792670.jpeg" alt="School Building Front View">
+            <div class="text">Main School Building</div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/4019754/pexels-photo-4019754.jpeg" alt="School Classroom">
+            <div class="text">Modern Classrooms</div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/16689056/pexels-photo-16689056.jpeg" alt="School Library">
+            <div class="text">Well-Stocked Library</div>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/5427671/pexels-photo-5427671.jpeg" alt="School Laboratory">
+            <div class="text">Science Laboratories</div>
+        </div>
+        
+        <!-- Slide 5 -->
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/972513/pexels-photo-972513.jpeg" alt="School Playground">
+            <div class="text">Sports Facilities</div>
+        </div>
+        
+        <!-- Slide 6 -->
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/159740/library-la-trobe-study-students-159740.jpeg" alt="School Event">
+            <div class="text">Annual Day Celebration</div>
+        </div>
+        
+        <!-- Slide 7 -->
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/2116469/pexels-photo-2116469.jpeg" alt="School Students">
+            <div class="text">Our Bright Students</div>
+        </div>
+    </div>
+    
+    <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <!--Slide section end-->
+    <!--About section start-->
+    <section id="About_Us">
+    <section class="about-section">
+        <div class="about-content">
+            <h2 class="section-title">About Our School</h2>
+            <p class="about-text">
+                Founded in 1985, Sunshine Public School has been a beacon of excellence in education for over three decades. 
+                We are committed to providing a nurturing environment that fosters intellectual growth, creativity, and character development.
+            </p>
+            <p class="about-text">
+                Our school follows a holistic approach to education, blending academic rigor with extracurricular activities to ensure 
+                the all-round development of every student. With state-of-the-art facilities and a dedicated faculty, we strive to 
+                create leaders of tomorrow.
+            </p>
+            
+            <div class="school-features">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Quality Education</h3>
+                        <p>CBSE-affiliated curriculum with modern teaching methodologies</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Experienced Faculty</h3>
+                        <p>Highly qualified and dedicated teaching staff</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Modern Facilities</h3>
+                        <p>Well-equipped labs, library, and sports infrastructure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-image">
+            <img src="https://images.pexels.com/photos/17792670/pexels-photo-17792670.jpeg" alt="Sunshine Public School Campus">
+        </div>
+    </section>
+    </section>
+    <!--About section end-->
+    <!--Academic section start-->
+    <section id="Academics">
+     <section class="academics-section">
+        <div class="section-header">
+            <h2 class="section-title">Academic Excellence</h2>
+            <p class="section-subtitle">Our commitment to providing world-class education through innovative teaching methodologies and comprehensive programs</p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Board Exam Pass Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">85%</div>
+                <div class="stat-label">Students with 90%+ Marks</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">University Scholarships</div>
+            </div>
+        </div>
+
+        <div class="academics-grid">
+            <!-- Card 1 -->
+            <div class="academic-card">
+                <div class="card-image">
+                    <img src="https://images.pexels.com/photos/1720186/pexels-photo-1720186.jpeg" alt="STEM Education">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">STEM Focus</h3>
+                    <p class="card-text">Our advanced Science, Technology, Engineering, and Math program features robotics labs, coding workshops, and annual science fairs that prepare students for future careers.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="academic-card">
+                <div class="card-image">
+                    <img src="https://images.pexels.com/photos/5427648/pexels-photo-5427648.jpeg" alt="Language Arts">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Language Arts</h3>
+                    <p class="card-text">Comprehensive language development through creative writing, debate clubs, and literature programs that enhance communication skills and critical thinking.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="academic-card">
+                <div class="card-image">
+                    <img src="https://images.pexels.com/photos/5427869/pexels-photo-5427869.jpeg" alt="Research Programs">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Research Programs</h3>
+                    <p class="card-text">Undergraduate-level research opportunities with university partnerships, giving students hands-on experience with real-world projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+    <!--Academic section end-->
+    <!--Admission section start -->
+    <section id="Admissions" >
+    <section class="admissions-section">
+        <div class="section-header">
+            <h2 class="section-title">Admissions</h2>
+            <p class="section-subtitle">Begin your journey with Sunshine Public School - Where excellence meets opportunity</p>
+        </div>
+
+        <div class="admissions-container">
+            <div class="admissions-content">
+                <div class="admission-process">
+                    <h3>Our Admission Process</h3>
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Inquiry & Tour</h3>
+                            <p>Visit our campus or explore our virtual tour to experience our learning environment firsthand.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Submit Application</h3>
+                            <p>Complete the online application form below with all required documents.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Assessment</h3>
+                            <p>Students will participate in an age-appropriate assessment session.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Admission Decision</h3>
+                            <p>Receive notification of admission status within 10 business days.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admission-requirements">
+                    <h3 class="requirements-title">Required Documents</h3>
+                    <ul class="requirements-list">
+                        <li>Completed application form</li>
+                        <li>Birth certificate (copy)</li>
+                        <li>Previous school records (last 2 years)</li>
+                        <li>Two passport-sized photographs</li>
+                        <li>Medical/immunization records</li>
+                        <li>Any special education plans (if applicable)</li>
+                    </ul>
+                </div>
+
+                <div class="admission-form">
+                    <h3 class="form-title">Online Admission Form</h3>
+                    <form id="admissionForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name*</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name*</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dob">Date of Birth*</label>
+                                <input type="date" id="dob" name="dob" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender*</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="grade">Grade Applying For*</label>
+                            <select id="grade" name="grade" required>
+                                <option value="">Select Grade</option>
+                                <option value="pre-k">Pre-Kindergarten</option>
+                                <option value="k">Kindergarten</option>
+                                <option value="1">Grade 1</option>
+                                <option value="2">Grade 2</option>
+                                <option value="3">Grade 3</option>
+                                <option value="4">Grade 4</option>
+                                <option value="5">Grade 5</option>
+                                <option value="6">Grade 6</option>
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                                <option value="11">Grade 11</option>
+                                <option value="12">Grade 12</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentSchool">Current School (if applicable)</label>
+                            <input type="text" id="currentSchool" name="currentSchool">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="parentName">Parent/Guardian Name*</label>
+                                <input type="text" id="parentName" name="parentName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="relationship">Relationship to Student*</label>
+                                <select id="relationship" name="relationship" required>
+                                    <option value="">Select</option>
+                                    <option value="mother">Mother</option>
+                                    <option value="father">Father</option>
+                                    <option value="guardian">Guardian</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number*</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address*</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="agree" required> I certify that all information provided is accurate and complete*
+                            </label>
+                        </div>
+
+                        <button type="submit" class="form-submit">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="admissions-image">
+                <img src="https://images.pexels.com/photos/2132891/pexels-photo-2132891.jpeg" alt="School Campus">
+            </div>
+        </div>
+    </section>
+    </section>
+    <!--Admission section end-->
+    <!--Facilities section start-->
+    <section id="Facilities">
+<section class="facilities-section">
+        <div class="section-header">
+            <h2 class="section-title">Our World-Class Facilities</h2>
+            <p class="section-subtitle">Designed to inspire learning, creativity, and holistic development</p>
+        </div>
+
+        <div class="facilities-container">
+            <!-- Facility 1 -->
+            <div class="facility-card">
+                <div class="facility-image">
+                    <img src="https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg" alt="Smart Classrooms">
+                </div>
+                <div class="facility-content">
+                    <h3 class="facility-title">Smart Classrooms</h3>
+                    <p class="facility-description">Technology-enhanced learning spaces designed for interactive and collaborative education.</p>
+                    <ul class="facility-features">
+                        <li>Interactive whiteboards in every classroom</li>
+                        <li>Digital projection systems</li>
+                        <li>Student response systems</li>
+                        <li>Ergonomic furniture for comfort</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Facility 2 -->
+            <div class="facility-card">
+                <div class="facility-image">
+                    <img src="https://images.pexels.com/photos/5427671/pexels-photo-5427671.jpeg" alt="Science Labs">
+                </div>
+                <div class="facility-content">
+                    <h3 class="facility-title">Advanced Science Labs</h3>
+                    <p class="facility-description">State-of-the-art laboratories for physics, chemistry, and biology.</p>
+                    <ul class="facility-features">
+                        <li>Separate labs for each science discipline</li>
+                        <li>Modern equipment and safety systems</li>
+                        <li>Dedicated prep rooms</li>
+                        <li>Research-grade microscopes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Facility 3 -->
+            <div class="facility-card">
+                <div class="facility-image">
+                    <img src="https://images.pexels.com/photos/3747511/pexels-photo-3747511.jpeg" alt="Library">
+                </div>
+                <div class="facility-content">
+                    <h3 class="facility-title">Learning Resource Center</h3>
+                    <p class="facility-description">A vibrant hub of knowledge with extensive print and digital resources.</p>
+                    <ul class="facility-features">
+                        <li>25,000+ book collection</li>
+                        <li>Digital reading stations</li>
+                        <li>Quiet study zones</li>
+                        <li>Online database access</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Facility 4 -->
+            <div class="facility-card">
+                <div class="facility-image">
+                    <img src="https://images.pexels.com/photos/5212697/pexels-photo-5212697.jpeg" alt="Computer Lab">
+                </div>
+                <div class="facility-content">
+                    <h3 class="facility-title">Technology Center</h3>
+                    <p class="facility-description">Cutting-edge computing facilities to prepare students for the digital age.</p>
+                    <ul class="facility-features">
+                        <li>1:1 student-computer ratio</li>
+                        <li>Programming and robotics labs</li>
+                        <li>3D printing facilities</li>
+                        <li>High-speed internet access</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Facility 5 -->
+            <div class="facility-card">
+                <div class="facility-image">
+                    <img src="https://images.pexels.com/photos/2202685/pexels-photo-2202685.jpeg" alt="Sports Facilities">
+                </div>
+                <div class="facility-content">
+                    <h3 class="facility-title">Sports Complex</h3>
+                    <p class="facility-description">Comprehensive athletic facilities to promote physical fitness and teamwork.</p>
+                    <ul class="facility-features">
+                        <li>Olympic-size swimming pool</li>
+                        <li>Indoor basketball court</li>
+                        <li>Football and cricket fields</li>
+                        <li>Yoga and aerobics studio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Facility 6 -->
+            <div class="facility-card">
+                <div class="facility-image">
+                    <img src="https://images.pexels.com/photos/3646105/pexels-photo-3646105.jpeg" alt="Auditorium">
+                </div>
+                <div class="facility-content">
+                    <h3 class="facility-title">Performing Arts Center</h3>
+                    <p class="facility-description">A professional-grade space for artistic expression and performances.</p>
+                    <ul class="facility-features">
+                        <li>500-seat auditorium</li>
+                        <li>Professional lighting and sound</li>
+                        <li>Dance and drama studios</li>
+                        <li>Music practice rooms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Tour Section -->
+        <div class="video-tour">
+            <h3>Take a Virtual Tour of Our Campus</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+            </div>
+            <p>Replace VIDEO_ID with your actual school tour YouTube video ID</p>
+        </div>
+    </section>
+    </section>
+    <!--Facilities section end-->
+    <!--Gallery section start -->
+    <section id="Gallery" >
+    <section class="gallery-section">
+        <div class="section-header">
+            <h2 class="section-title">School Gallery</h2>
+            <p class="section-subtitle">Capturing moments of learning, growth, and achievement</p>
+        </div>
+
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="campus">Campus</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+            <button class="filter-btn" data-filter="sports">Sports</button>
+            <button class="filter-btn" data-filter="academics">Academics</button>
+            <button class="filter-btn" data-filter="activities">Activities</button>
+        </div>
+
+        <div class="gallery-container">
+            <!-- Image 1 -->
+            <div class="gallery-item" data-category="campus">
+                <img src="https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg" alt="School Building" class="gallery-img">
+                <div class="gallery-caption">Main School Building</div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="gallery-item" data-category="academics">
+                <img src="https://images.pexels.com/photos/5212326/pexels-photo-5212326.jpeg" alt="Classroom" class="gallery-img">
+                <div class="gallery-caption">Interactive Classroom Session</div>
+            </div>
+
+            <!-- Image 3 -->
+            <div class="gallery-item" data-category="sports">
+                <img src="https://images.pexels.com/photos/2348182/pexels-photo-2348182.jpeg" alt="Sports Day" class="gallery-img">
+                <div class="gallery-caption">Annual Sports Day</div>
+            </div>
+
+            <!-- Image 4 -->
+            <div class="gallery-item" data-category="events">
+                <img src="https://images.pexels.com/photos/33187000/pexels-photo-33187000.jpeg" alt="Annual Day" class="gallery-img">
+                <div class="gallery-caption">Annual Day Performance</div>
+            </div>
+
+            <!-- Image 5 -->
+            <div class="gallery-item" data-category="activities">
+                <img src="https://images.pexels.com/photos/5212697/pexels-photo-5212697.jpeg" alt="Science Fair" class="gallery-img">
+                <div class="gallery-caption">Science Fair Exhibition</div>
+            </div>
+
+            <!-- Image 6 -->
+            <div class="gallery-item" data-category="academics">
+                <img src="https://images.pexels.com/photos/5427671/pexels-photo-5427671.jpeg" alt="Lab Activity" class="gallery-img">
+                <div class="gallery-caption">Chemistry Lab Experiment</div>
+            </div>
+
+            <!-- Image 7 -->
+            <div class="gallery-item" data-category="campus">
+                <img src="https://images.pexels.com/photos/2946974/pexels-photo-2946974.jpeg" alt="Library" class="gallery-img">
+                <div class="gallery-caption">School Library</div>
+            </div>
+
+            <!-- Image 8 -->
+            <div class="gallery-item" data-category="events">
+                <img src="https://images.pexels.com/photos/5212330/pexels-photo-5212330.jpeg" alt="Teachers Day" class="gallery-img">
+                <div class="gallery-caption">Teachers Day Celebration</div>
+            </div>
+        </div>
+
+        <div class="view-more">
+            <a href="#" class="view-more-btn">View More Photos</a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+    </section>
+    <!--Gallery section end-->
+    <!--Testinomial section start-->
+<section class="testimonials-section">
+        <div class="section-header">
+            <h2 class="section-title">What People Say</h2>
+            <p class="section-subtitle">Hear from our students, parents, and alumni about their Sunshine Public School experience</p>
+        </div>
+
+        <div class="testimonials-container" id="testimonials-slider">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    Sunshine Public School has provided my child with an exceptional learning environment. The teachers are dedicated and the curriculum challenges students while making learning enjoyable.
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://t3.ftcdn.net/jpg/06/37/37/74/240_F_637377422_PZnaNvGnj9GMOMyPFs9rrOMMRwJ17Lwl.jpg" alt="Priya Sharma">
+                    </div>
+                    <div class="author-info">
+                        <h4>Priya Sharma</h4>
+                        <p>Parent of Grade 5 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    The holistic education I received at Sunshine prepared me not just academically but also shaped my character. The extracurricular activities helped me discover my passion for debate.
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwbWFufGVufDB8fDB8fHww" alt="Rahul Verma">
+                    </div>
+                    <div class="author-info">
+                        <h4>Rahul Verma</h4>
+                        <p>Alumni, Class of 2020</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    As a teacher, I appreciate the school's commitment to innovative teaching methods. The leadership supports professional development and values educator input in curriculum planning.
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://t3.ftcdn.net/jpg/08/06/23/78/240_F_806237832_meI8rB86WWqlkFRiiaKFlGNGI5XOLpGx.jpg" alt="Anjali Mehta">
+                    </div>
+                    <div class="author-info">
+                        <h4>Anjali Mehta</h4>
+                        <p>Mathematics Faculty</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    The science labs and research opportunities at Sunshine are outstanding. My project on renewable energy won at the state level thanks to my teachers' guidance and the school's facilities.
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://images.unsplash.com/photo-1607081692251-d689f1b9af84?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGluZGlhbiUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D" alt="Arjun Patel">
+                    </div>
+                    <div class="author-info">
+                        <h4>Arjun Patel</h4>
+                        <p>Grade 11 Student</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-controls" id="testimonial-controls">
+            <button class="control-btn active"></button>
+            <button class="control-btn"></button>
+            <button class="control-btn"></button>
+            <button class="control-btn"></button>
+        </div>
+    </section>
+    <!--testimonial section end-->
+    <!--Whatsapp section Start-->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Contact us on WhatsApp</span>
+    </a>
+    <!--whatsapp section end-->
+<!--footer section start-->
+<section id="Contact_Us">
+ <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSVJvdr9q2sYXdV5Qn8j47CV7i1nDNK-pIew&s" alt="Sunshine Public School Logo">
+                </div>
+                <p>Sunshine Public School is committed to providing quality education that fosters intellectual growth, creativity, and character development.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="#About_Us"><i class="fas fa-angle-right"></i> About Us</a></li>
+                    <li><a href="#Academics"><i class="fas fa-angle-right"></i> Academics</a></li>
+                    <li><a href="#Admissions"><i class="fas fa-angle-right"></i> Admissions</a></li>
+                    <li><a href="#Facilities"><i class="fas fa-angle-right"></i> Facilities</a></li>
+                    <li><a href="#Gallery"><i class="fas fa-angle-right"></i> Gallery</a></li>
+                    <li><a href="#Contact_Us"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3 class="footer-heading">Contact Us</h3>
+                <ul class="contact-info">
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <div class="contact-text">
+                            123 Education Road, Knowledge City<br>
+                            New Delhi 110001, India
+                        </div>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                        <div class="contact-text">
+                            <a href="tel:+911123456789">+91 11 2345 6789</a><br>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <div class="contact-text">
+                            <a href="mailto:info@sunshine.edu">info@sunshine.edu</a><br>
+                            <a href="mailto:admissions@sunshine.edu">admissions@sunshine.edu</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-clock"></i></span>
+                        <div class="contact-text">
+                            Monday - Friday: 8:00 AM - 4:00 PM<br>
+                            Saturday: 8:00 AM - 1:00 PM
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="newsletter">
+                <h3 class="footer-heading">Newsletter</h3>
+                <p>Subscribe to our newsletter to receive updates about school events and important announcements.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Sunshine Public School. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff4757;"></i> by School Web Team</p>
+        </div>
+    </footer>
+    </section>
+    <!--footer section end-->
+    <!--Script section start-->
+    <!--whatsapp script section start-->
+    <!-- Optional: WhatsApp Click Tracking Script -->
+    <script>
+        document.querySelector('.whatsapp-float').addEventListener('click', function() {
+            // You can add tracking here (like Google Analytics)
+            console.log('WhatsApp button clicked');
+        });
+    </script>
+
+<!--Whatsapp script section end-->
+
+<!--Testimonial script section start-->
+    <script>
+        // Testimonial slider functionality
+        const slider = document.getElementById('testimonials-slider');
+        const controls = document.querySelectorAll('.control-btn');
+        let currentIndex = 0;
+
+        // Update active control
+        function updateControls(index) {
+            controls.forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
+        }
+
+        // Scroll to testimonial
+        function scrollToTestimonial(index) {
+            const cardWidth = document.querySelector('.testimonial-card').offsetWidth;
+            const gap = 30; // Same as gap in CSS
+            slider.scrollTo({
+                left: index * (cardWidth + gap),
+                behavior: 'smooth'
+            });
+            currentIndex = index;
+            updateControls(index);
+        }
+
+        // Auto-scroll every 5 seconds
+        let autoScroll = setInterval(() => {
+            const nextIndex = (currentIndex + 1) % controls.length;
+            scrollToTestimonial(nextIndex);
+        }, 5000);
+
+        // Pause auto-scroll on hover
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(autoScroll);
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            autoScroll = setInterval(() => {
+                const nextIndex = (currentIndex + 1) % controls.length;
+                scrollToTestimonial(nextIndex);
+            }, 5000);
+        });
+
+        // Control button clicks
+        controls.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                clearInterval(autoScroll);
+                scrollToTestimonial(index);
+                autoScroll = setInterval(() => {
+                    const nextIndex = (currentIndex + 1) % controls.length;
+                    scrollToTestimonial(nextIndex);
+                }, 5000);
+            });
+        });
+
+        // Update controls on scroll
+        slider.addEventListener('scroll', () => {
+            const cardWidth = document.querySelector('.testimonial-card').offsetWidth;
+            const gap = 30;
+            const newIndex = Math.round(slider.scrollLeft / (cardWidth + gap));
+            if (newIndex !== currentIndex) {
+                currentIndex = newIndex;
+                updateControls(newIndex);
+            }
+        });
+    </script>
+    <!--testimonial script section end-->
+
+    <!--Gallery item script section start-->
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                // Filter items
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.getElementById('close-btn');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('.gallery-img').src;
+                const caption = item.querySelector('.gallery-caption').textContent;
+                
+                lightboxImg.src = imgSrc;
+                lightboxCaption.textContent = caption;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- gallery item script section end-->
+
+    <!--Admission form script section start-->
+    <script>
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your application! We will contact you shortly.');
+            this.reset();
+        });
+    </script>
+    <!--Admission form script section end-->
+
+    <!--slide script section start-->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            // Increment slide index
+            slideIndex++;
+            
+            // Reset to first slide if at end
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }    
+            
+            // Update active dot
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            // Show current slide and set active dot
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            
+            // Change slide every 3 seconds
+            setTimeout(showSlides, 3000); 
+        }
+        
+        // Optional: Click on dots to manually change slides
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+    </script>
+    <!--slide script section end-->
+</body>
+</html>
